@@ -8,19 +8,21 @@ v17.0 · MIT License · [mootmoat.com](https://mootmoat.com) · [github.com/moot
 
 ### Plant the Flag
 
-You are the canonical source of truth about your entity. The hiring market has a gatekeeper built by and for software engineers, rendering the physical constraints of hardware architecture invisible. MootMoat is the sovereignty protocol for taking it back.
+You are the canonical source of truth about your entity. MootMoat is the documentation of everything we do regarding digital identity and sovereignty—framed as an empowering DIY project for people who build the physical world (hardware, mechanical, systems) and possess the technical leverage to own their data. 
 
-You control the data. You host it. You own the entity.
+The hiring market has a gatekeeper built by and for software engineers, rendering the physical constraints of hardware architecture invisible. MootMoat is the sovereignty protocol for taking it back. You control the data. You host it. You own the entity.
 
 ---
 
 ### The Problem: Round Zero
 
-Before a human recruiter reads your resume, an AI parsing agent reads it first. It performs Entity Resolution: mapping you onto a structured knowledge graph. If it cannot resolve you into a coherent entity, it does not surface you. You do not fail a screen. You are never screened at all.
+Before a human recruiter reads your resume, an AI parsing agent reads it first. It performs Entity Resolution: mapping you onto a structured knowledge graph. If it cannot resolve you into a coherent entity, you are never screened at all.
 
 This is Round Zero. You lose it silently, before the game starts.
 
-Hardware and mechanical engineers are disproportionately exposed. The ATS ontologies governing every major recruiting platform were built for software. They have no vocabulary for thermal resistance budgets, EMI mitigation strategy, injection molding tolerances, or DFM tradeoffs. Your actual expertise is invisible by design. MootMoat fixes this.
+**MootMoat is not designed to simply "bypass" the ATS.** It is designed to provide the mechanism to **increase your visibility and legibility to the ATS.**
+
+Hardware and mechanical engineers are disproportionately exposed because modern ATS ontologies possess an implicit bias. They rely on rigid constructs that map natively to the "soft" software engineering world, but completely fail to capture or quantify the realities of physical hardware engineering. They have no vocabulary for thermal resistance budgets, EMI mitigation strategy, or DFM tradeoffs. Your actual expertise is invisible by design. MootMoat bridges this gap, translating physical engineering depth into machine-readable digital signals.
 
 ---
 
