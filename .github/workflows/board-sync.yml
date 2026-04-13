@@ -1,0 +1,14 @@
+name: Board Sync
+
+# Fires on every issue event that should update board membership.
+# Replaces the 5-rule GitHub Projects auto-add limit.
+# Calls the reusable workflow in the mechanistic-org/.github repo.
+
+on:
+  issues:
+    types: [opened, reopened, transferred]
+
+jobs:
+  add-to-project:
+    uses: mechanistic-org/.github/.github/workflows/add-to-project.yml@main
+    secrets: inherit
