@@ -7,7 +7,7 @@ export const prerender = false;
 const R2_STAGING_ROOT =
   import.meta.env.PROD || process.env.NODE_ENV === "production"
     ? "" // Prod (Worker) uses root relative to binding
-    : "D:/GitHub/mootmoat-assets/R2_STAGING"; // Local Dev Code
+    : "D:/GitHub/mootmoat-assets/R2_MIRROR"; // Local Dev Code
 
 const DEBUG_MODE = true;
 
@@ -73,7 +73,7 @@ export const GET: APIRoute = async ({ params, locals }) => {
         decodedPath = checkPath.substring(4);
       }
 
-      const stagingRoot = path.resolve("D:/GitHub/mootmoat-assets/R2_STAGING");
+      const stagingRoot = path.resolve("D:/GitHub/mootmoat-assets/R2_MIRROR");
       const filePath = path.join(stagingRoot, decodedPath);
 
       if (!fs.existsSync(filePath)) {

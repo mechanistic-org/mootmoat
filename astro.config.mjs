@@ -95,10 +95,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
     server: {
       fs: {
-        allow: [".", "D:/GitHub/mootmoat-assets/R2_STAGING"],
+        allow: [".", "D:/GitHub/mootmoat-assets/R2_MIRROR"],
       },
       watch: {
-        ignored: ["**/public/assets/**", "**/public/assets", "**/R2_STAGING/**"],
+        ignored: ["**/public/assets/**", "**/public/assets", "**/R2_MIRROR/**"],
       },
     },
     resolve: {
