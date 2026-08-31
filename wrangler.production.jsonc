@@ -10,6 +10,10 @@
     {
       "pattern": "mootmoat.com/*",
       "zone_name": "mootmoat.com"
+    },
+    {
+      "pattern": "www.mootmoat.com/*",
+      "zone_name": "mootmoat.com"
     }
   ],
   "assets": {
