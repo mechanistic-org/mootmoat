@@ -10,7 +10,6 @@
     "deploy:worker": "npx --yes wrangler@4.114.0 deploy",
     "check:worker": "npx --yes wrangler@4.114.0 deploy --dry-run",
     "deploy:production": "npx --yes wrangler@4.114.0 deploy --config wrangler.production.jsonc",
-    "rollback:pages": "npx --yes wrangler@4.114.0 deploy --config wrangler.rollback.jsonc",
     "preview": "astro preview",
     "astro": "astro",
     "winsearch": "robocopy dist/pagefind public/pagefind /E",
