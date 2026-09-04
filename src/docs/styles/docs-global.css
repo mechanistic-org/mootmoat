@@ -10,7 +10,7 @@
 
 @layer base {
   #documentation-layout {
-    /* starwind component variables (will override a base global.css file styles) */
+    /* shared component variables (will override a base global.css file styles) */
     --background: var(--color-base-50);
     --foreground: var(--color-base-900);
     --card: var(--color-base-50);
@@ -54,7 +54,7 @@
 
   #documentation-layout.dark,
   #documentation-layout .dark {
-    /* starwind component variables (will override a base global.css file styles) */
+    /* shared component variables (will override a base global.css file styles) */
     --background: var(--color-base-950);
     --foreground: var(--color-base-50);
     --card: var(--color-base-950);
@@ -88,7 +88,7 @@
     @apply scheme-dark;
   }
 
-  /* starwind preflight merged with Cosmic Themes */
+  /* Shared preflight */
   * {
     @apply border-border;
   }
@@ -172,7 +172,7 @@
   }
 
   /* transition-colors but without outline-color transition property */
-  .starwind-transition-colors {
+  .docs-transition-colors {
     transition-property:
       color, background-color, border-color, text-decoration-color, fill, stroke,
       --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;

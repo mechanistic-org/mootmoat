@@ -9,8 +9,5 @@
 /docs/*
   Content-Type: text/html; charset=utf-8
 
-/fr/*
-  Content-Type: text/html; charset=utf-8
-
 /404
   Content-Type: text/html; charset=utf-8

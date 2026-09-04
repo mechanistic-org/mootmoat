@@ -1,99 +1,20 @@
 ---
 import DocsLogo from "@/docs/components/docs-logo/DocsLogo.astro";
 import SocialIconSimple from "@/docs/components/social/SocialIconSimple.astro";
-import { docsRoute } from "@/docs/js/docsUtils";
-import { getLocaleFromUrl } from "@/docs/js/localeUtils";
-import { getTranslatedData } from "@/docs/js/translationUtils";
-
+import siteData from "@/docs/config/siteData.json";
 import FooterLink from "./FooterLink.astro";
-
-const currLocale = getLocaleFromUrl(Astro.url);
-const docsSiteData = getTranslatedData("siteData", currLocale);
-
-const today = new Date();
-
-interface FooterLinkItem {
-  label: string;
-  href: string;
-  newTab?: boolean;
-}
-
-const docLinks: FooterLinkItem[] = [
-  { label: "Getting Started", href: `/${docsRoute}/getting-started`, newTab: false },
-  { label: "Components", href: `/${docsRoute}/components`, newTab: false },
-  { label: "Get Solstice", href: "https://cosmicthemes.com/themes/solstice", newTab: true },
-];
-
-const communityLinks: FooterLinkItem[] = [
-  { label: "GitHub", href: "https://github.com/Boston343", newTab: true },
-  { label: "Support", href: "https://cosmicthemes.com/support/", newTab: true },
-];
-
-const legalLinks: FooterLinkItem[] = [
-  { label: "Privacy Policy", href: "/privacy", newTab: false },
-  { label: "Terms of Service", href: "/terms", newTab: false },
-  { label: "Cookie Policy", href: "/cookies", newTab: false },
-];
 ---
-
 <footer class="bg-background text-foreground mt-8 border-t">
   <div class="docs-site-container pt-8 pb-16">
-    <div class="grid grid-cols-1 gap-8 text-sm sm:grid-cols-2 lg:grid-cols-4">
-      <!-- Logo and Description (Column 1) -->
-      <div class="flex flex-col items-start">
-        <DocsLogo />
-        <!-- Social Links -->
-        <div class="mt-3 flex flex-wrap gap-3">
-          {docsSiteData.footerSocials?.map((social) => <SocialIconSimple {...social} size="sm" />)}
-        </div>
-        <!-- Copyright -->
-        <div class="text-foreground/60 mt-4 text-xs">
-          <p>&copy; {today.getFullYear()} {docsSiteData.title}</p>
-        </div>
-      </div>
-
-      <!-- Documentation Links (Column 2) -->
-      <div class="flex flex-col gap-2">
-        <h3 class="font-medium">Documentation</h3>
-        {
-          docLinks.map((link) => (
-            <FooterLink href={link.href} newTab={link.newTab}>
-              {link.label}
-            </FooterLink>
-          ))
-        }
-      </div>
-
-      <!-- Community Links (Column 3) -->
-      <div class="flex flex-col gap-2">
-        <h3 class="font-medium">Community</h3>
-        {
-          communityLinks.map((link) => (
-            <FooterLink href={link.href} newTab={link.newTab}>
-              {link.label}
-            </FooterLink>
-          ))
-        }
-      </div>
-
-      <!-- Resources Links (Column 4) -->
-      <div class="flex flex-col gap-2">
-        <h3 class="font-medium">Legal</h3>
-        {
-          legalLinks.map((link) => (
-            <FooterLink href={link.href} newTab={link.newTab}>
-              {link.label}
-            </FooterLink>
-          ))
-        }
-      </div>
-      <div class="sr-only">
-        <p>
-          A website template crafted with love by <a href="https://cosmicthemes.com/"
-            >Cosmic Themes</a
-          >
-        </p>
-      </div>
-    </div>
+    <DocsLogo />
+    <p class="mt-4">Author-controlled evidence. Specific claims. Visible limits.</p>
+    <nav aria-label="Footer" class="mt-4 flex flex-wrap gap-4">
+      <FooterLink href="/docs/">Start here</FooterLink>
+      <FooterLink href="/docs/workbook/">Evidence workbook</FooterLink>
+      <FooterLink href="/docs/faq/">FAQ</FooterLink>
+      <FooterLink href="https://github.com/mechanistic-org/mootmoat" newTab>Repository</FooterLink>
+      {siteData.footerSocials?.map((social) => <SocialIconSimple {...social} size="sm" />)}
+    </nav>
+    <p class="mt-4 text-sm">&copy; {new Date().getFullYear()} Erik Norris</p>
   </div>
 </footer>

@@ -6,7 +6,7 @@ type Props = HTMLAttributes<"div">;
 const { class: className, ...rest } = Astro.props;
 ---
 
-<div id="docs-search-dialog" class:list={["starwind-search-dialog", className]} {...rest}>
+<div id="docs-search-dialog" class:list={["docs-search-dialog", className]} {...rest}>
   <slot />
 </div>
 
@@ -28,7 +28,7 @@ const { class: className, ...rest } = Astro.props;
 
     constructor(dialogWrapper: HTMLElement, dialogNumber: number) {
       this.dialog = dialogWrapper.querySelector("dialog")!;
-      this.backdrop = dialogWrapper.querySelector(".starwind-dialog-backdrop")!;
+      this.backdrop = dialogWrapper.querySelector(".docs-dialog-backdrop")!;
 
       // animationDuration is set with inline styles through passed prop to DialogContent
       const animationDurationString = this.dialog.style.animationDuration;
@@ -42,7 +42,7 @@ const { class: className, ...rest } = Astro.props;
       }
 
       // if trigger is set with asChild, use the first child element for trigger button
-      const tempTrigger = dialogWrapper.querySelector(".starwind-dialog-trigger") as HTMLElement;
+      const tempTrigger = dialogWrapper.querySelector(".docs-dialog-trigger") as HTMLElement;
       if (tempTrigger?.hasAttribute("data-as-child")) {
         this.trigger = tempTrigger.firstElementChild as HTMLButtonElement;
       } else {
@@ -51,13 +51,13 @@ const { class: className, ...rest } = Astro.props;
 
       // if closeButtons are set with asChild, swap the wrapper with its first child
       const tempCloseButtons = dialogWrapper.querySelectorAll(
-        ".starwind-dialog-close",
+        ".docs-dialog-close",
       ) as NodeListOf<HTMLElement>;
       tempCloseButtons.forEach((button: HTMLElement) => {
         if (button.hasAttribute("data-as-child")) {
           const childElement = button.firstElementChild;
           if (childElement) {
-            childElement.classList.add("starwind-dialog-close");
+            childElement.classList.add("docs-dialog-close");
             button.parentNode?.replaceChild(childElement, button);
           }
         }
@@ -65,7 +65,7 @@ const { class: className, ...rest } = Astro.props;
       });
 
       this.closeButtons = dialogWrapper.querySelectorAll(
-        ".starwind-dialog-close",
+        ".docs-dialog-close",
       ) as NodeListOf<HTMLButtonElement>;
 
       // if any elements are not there, exit
@@ -80,7 +80,7 @@ const { class: className, ...rest } = Astro.props;
       const firstHeading = this.dialog.querySelector("h1, h2, h3, h4, h5, h6");
       if (firstHeading) {
         // create a unique ID for the heading
-        firstHeading.id = `starwind-dialog${dialogNumber}-heading`;
+        firstHeading.id = `docs-dialog${dialogNumber}-heading`;
         // set the aria-labelledby attribute to the first heading element
         this.dialog.setAttribute("aria-labelledby", firstHeading.id);
       }

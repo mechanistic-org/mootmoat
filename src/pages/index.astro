@@ -1,30 +1,18 @@
 ---
-import { getLocaleFromUrl } from "@/docs/js/localeUtils";
-import { getTranslatedData, useTranslations } from "@/docs/js/translationUtils";
 import DocsLandingLayout from "@/docs/layouts/DocsLandingLayout.astro";
 import Button from "@/docs/components/button/Button.astro";
-
-const currLocale = getLocaleFromUrl(Astro.url);
-const siteData = getTranslatedData("siteData", currLocale);
-const t = useTranslations(currLocale);
+import siteData from "@/docs/config/siteData.json";
+export const prerender = true;
 ---
-
 <DocsLandingLayout title={siteData.title} description={siteData.description}>
-  <main
-    class="flex min-h-screen flex-col items-center justify-center overflow-hidden p-8 text-center"
-  >
-    <h1 class="font-heading text-base-900 dark:text-base-100 mb-4 text-4xl font-bold md:text-6xl">
-      {t("hero_title")}
-    </h1>
-    <p class="text-base-500 dark:text-base-400 mb-8 max-w-2xl text-xl">{t("hero_description")}</p>
-
-    <div class="flex gap-4">
-      <Button href="/docs/executive-briefing_-the-sovereign-engineering-entity/" variant="primary"
-        >Read Executive Briefing</Button
-      >
-      <Button href="/docs/mootmoat-v17-implementation-study-guide/" variant="ghost"
-        >View the Documentation Index</Button
-      >
+  <main id="main-content" class="doctrine-landing" data-pagefind-body>
+    <h1 class="docs-h1">Make the work reviewable.</h1>
+    <p>MootMoat is a DIY method for documenting engineering experience: the constraint, the decision, your contribution, and the evidence behind it.</p>
+    <p>You control the source record. A reader should be able to see what it supports and where it stops.</p>
+    <div class="doctrine-actions">
+      <Button href="/docs/workbook/" variant="primary">Start a workbook canvas</Button>
+      <Button href="/docs/" variant="ghost">Read the method</Button>
     </div>
+    <p>This is not an ATS bypass or an application-volume hack. It is a way to make specific claims easier to examine.</p>
   </main>
 </DocsLandingLayout>

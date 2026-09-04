@@ -19,11 +19,11 @@ if (Astro.slots.has("default")) {
 
 {
   asChild && hasChildren ? (
-    <div class="starwind-dialog-close" data-as-child>
+    <div class="docs-dialog-close" data-as-child>
       <slot />
     </div>
   ) : (
-    <button type="button" class:list={["starwind-dialog-close", className]} {...rest}>
+    <button type="button" class:list={["docs-dialog-close", className]} {...rest}>
       <slot>Demo close button</slot>
     </button>
   )

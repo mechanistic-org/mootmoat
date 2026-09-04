@@ -1,14 +1,12 @@
 ---
 import Link from "@tabler/icons/outline/link.svg";
 
-import { getLocaleFromUrl } from "@/docs/js/localeUtils";
-import { getLocalizedPathname } from "@/docs/js/translationUtils";
 
-const currLocale = getLocaleFromUrl(Astro.url);
+
 
 const { id, ...rest }: Record<string, any> = Astro.props;
 
-const domain = Astro.url.origin + (await getLocalizedPathname(currLocale, Astro.url)); // pulls from astro.config.mjs
+const domain = new URL(Astro.url.pathname, Astro.site).toString();
 // console.log(domain + "#" + id);
 ---
 

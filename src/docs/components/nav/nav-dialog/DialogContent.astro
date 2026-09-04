@@ -15,7 +15,7 @@ const { class: className, animationDuration = 200, ...rest } = Astro.props;
 <!-- dialog overlay -->
 <div
   class:list={[
-    "starwind-dialog-backdrop fixed -top-[20vh] left-0 z-50 hidden h-[120lvh] w-screen bg-black/10 dark:bg-black/80",
+    "docs-dialog-backdrop fixed -top-[20vh] left-0 z-50 hidden h-[120lvh] w-screen bg-black/10 dark:bg-black/80",
     "data-[state=open]:animate-in fade-in",
     "data-[state=closed]:animate-out data-[state=closed]:fill-mode-forwards fade-out",
   ]}
@@ -45,7 +45,7 @@ const { class: className, animationDuration = 200, ...rest } = Astro.props;
   <button
     type="button"
     class:list={[
-      "starwind-dialog-close docs-nav__link--base",
+      "docs-dialog-close docs-nav__link--base",
       "absolute top-3 right-3 rounded-sm disabled:pointer-events-none",
       "focus-visible:outline-outline focus-visible:outline-2 focus-visible:outline-offset-2",
     ]}

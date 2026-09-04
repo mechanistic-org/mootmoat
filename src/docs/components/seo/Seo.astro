@@ -1,15 +1,10 @@
 ---
 import { getImage } from "astro:assets";
-import { type CollectionEntry } from "astro:content";
 import { SEO } from "astro-seo";
 
-import { getLocaleFromUrl } from "@/docs/js/localeUtils";
-import { getTranslatedData } from "@/docs/js/translationUtils";
 
-import HrefLang from "./HrefLang.astro";
 
-const currLocale = getLocaleFromUrl(Astro.url);
-const siteData = getTranslatedData("siteData", currLocale);
+import siteData from "@/docs/config/siteData.json";
 
 interface Props {
   title: string;
@@ -21,7 +16,7 @@ interface Props {
 const { title, description, image, noindex = false } = Astro.props;
 
 let optimizedImage;
-let jsonLD;
+
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
 if (image) {
@@ -62,9 +57,9 @@ const imageUrl =
       siteName: siteData.title,
     },
     image: {
-      type: "image/webp",
-      width: optimizedImage?.attributes.width || "1200",
-      height: optimizedImage?.attributes.height || "800",
+      type: optimizedImage ? "image/webp" : "image/png",
+      width: optimizedImage?.attributes.width,
+      height: optimizedImage?.attributes.height,
       alt: title,
     },
   }}
@@ -79,6 +74,3 @@ const imageUrl =
   noindex={noindex}
   nofollow={noindex}
 />
-
-<!-- hreflang attributes -->
-<HrefLang />

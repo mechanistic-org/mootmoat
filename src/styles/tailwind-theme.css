@@ -4,7 +4,7 @@
  * These are in a separate file so it can be imported into <style> tags in .astro components
  */
 @theme {
-  /* cosmic themes theme config */
+  /* Existing palette; visual coherence is owned by #10. */
   /* primary colors. Can generate with https://uicolors.app/create, then convert to oklch with https://oklch.com/ */
   --color-primary-50: var(--color-fuchsia-50);
   --color-primary-100: var(--color-fuchsia-100);
@@ -45,32 +45,12 @@
     "Geist Mono Variable", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono",
     "Courier New", "monospace";
 
-  /* starwind and cosmic themes animations */
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
 
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--starwind-accordion-content-height);
-    }
-  }
-
-  @keyframes accordion-up {
-    from {
-      height: var(--starwind-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
 }
 
 /* "inline" option is necessary here https://github.com/tailwindlabs/tailwindcss/discussions/15122#discussioncomment-11356322 */
 @theme inline {
-  /* starwind utilities setup */
+  /* Shared utility tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

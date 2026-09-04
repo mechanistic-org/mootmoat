@@ -7,20 +7,18 @@ import TableOfContents from "@/docs/components/table-of-contents/TableOfContents
 import TocLink from "@/docs/components/table-of-contents/TocLink.astro";
 import { siteSettings } from "@/docs/config/siteSettings.json";
 import { getAdjacentPages } from "@/docs/js/docsUtils";
-import { getLocaleFromUrl } from "@/docs/js/localeUtils";
 
 import BaseLayoutDocs from "./BaseLayoutDocs.astro";
 
-const currLocale = getLocaleFromUrl(Astro.url);
+
 
 interface Props {
   doc: CollectionEntry<"docs">;
   headings?: import("astro").MarkdownHeading[];
-  tabId?: string;
 }
 
-const { doc, headings = [], tabId = "main" } = Astro.props;
-const { title, description = "", sidebar, tableOfContents, pagefind = true } = doc.data;
+const { doc, headings = [] } = Astro.props;
+const { title, description = "", tableOfContents } = doc.data;
 
 const minHeadingLevel = tableOfContents?.minHeadingLevel ?? 2;
 const maxHeadingLevel = tableOfContents?.maxHeadingLevel ?? 3;
@@ -30,11 +28,11 @@ const filteredHeadings = headings.filter(
   (heading) => heading.depth <= maxHeadingLevel && heading.depth >= minHeadingLevel,
 );
 
-// Get adjacent pages - only from the current tab
-const { prev, next } = await getAdjacentPages(doc.id, currLocale, tabId);
+// Previous and next pages follow the published doctrine order.
+const { prev, next } = await getAdjacentPages(doc.id);
 ---
 
-<BaseLayoutDocs title={title} description={description} tabId={tabId}>
+<BaseLayoutDocs title={title} description={description}>
   <div
     class="min-h-[calc(100vh-var(--nav-height))] flex-1 md:grid md:grid-cols-[260px_minmax(0,1fr)] xl:grid-cols-[280px_minmax(0,1fr)]"
   >
@@ -44,7 +42,7 @@ const { prev, next } = await getAdjacentPages(doc.id, currLocale, tabId);
         <div
           class="max-h-[calc(100vh-var(--nav-height))] overflow-y-auto px-1 pt-(--main-content-pt) pb-4"
         >
-          <SidebarNav tabId={tabId} />
+          <SidebarNav />
         </div>
       </div>
     </aside>
@@ -78,7 +76,7 @@ const { prev, next } = await getAdjacentPages(doc.id, currLocale, tabId);
           <div
             id="main-content"
             class="w-full max-w-2xl min-w-0 scroll-mt-[calc(var(--nav-height)+1rem)] overflow-x-hidden pb-(--main-content-pt) lg:mt-(--main-content-pt) lg:px-1"
-            data-pagefind-body={pagefind ? true : undefined}
+            data-pagefind-body
           >
             <div class="flex">
               <h1 class="docs-h1 docs-text-gradient mb-8 pb-1">{title}</h1>

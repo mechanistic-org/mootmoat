@@ -1,5 +1,3 @@
-import { localeMap, locales } from "@/docs/config/siteSettings.json";
-
 /**
  * * returns "slugified" text.
  * @param text: string - text to slugify
@@ -44,26 +42,4 @@ export function categorify(text: string): string {
   return slugifiedText
     .replace(/-/g, " ") // replace "-" with space
     .toUpperCase();
-}
-
-// --------------------------------------------------------
-/**
- * * returns a nicely formatted string of the date passed
- * @param date: string | number | Date - date to format
- * @param locale: string - locale to format the date in
- * @returns string - formatted date
- */
-export function formatDate(date: string | number | Date, locale: (typeof locales)[number]): string {
-  let localeString = "en-US";
-
-  if (locales.includes(locale)) {
-    localeString = localeMap[locale];
-  }
-
-  return new Date(date).toLocaleDateString(localeString, {
-    timeZone: "UTC",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
 }

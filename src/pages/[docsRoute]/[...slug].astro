@@ -14,68 +14,18 @@ import CustomH5Copy from "@/docs/components/markdown-overrides/CustomH5Copy.astr
 import CustomH6 from "@/docs/components/markdown-overrides/CustomH6.astro";
 import CustomH6Copy from "@/docs/components/markdown-overrides/CustomH6Copy.astro";
 import ExternalLink from "@/docs/components/markdown-overrides/ExternalLink.astro";
-import { defaultLocale, siteSettings } from "@/docs/config/siteSettings.json";
-import { docsRoute } from "@/docs/js/docsUtils";
-import { filterCollectionByLanguage } from "@/docs/js/localeUtils";
-import { getLocalizedRoute, getTranslatedData } from "@/docs/js/translationUtils";
+import { siteSettings } from "@/docs/config/siteSettings.json";
 import DocsLayout from "@/docs/layouts/DocsLayout.astro";
-
+export const prerender = true;
 export async function getStaticPaths() {
-  const docs = await getCollection("docs", ({ data }) => {
-    // filter out draft pages
-    return data.draft !== true;
-  });
-
-  // get rid of pages from other languages and remove locale from slug
-  const filteredDocs = filterCollectionByLanguage(docs, defaultLocale);
-
-  const sidebarData = getTranslatedData("sidebarNavData", defaultLocale);
-  const documentationTabs = sidebarData.tabs;
-
-  // replace any starting or ending slashes, then remove anything before the first slash remaining if necessary
-  const localizedDocsRoute = getLocalizedRoute(defaultLocale, docsRoute)
-    .replace(/^\/|\/$/g, "")
-    .replace(/^[^/]+\//, "");
-
-  // Create paths for each docs tab
-  const paths: any[] = [];
-
-  // If documentation tabs are defined, use them to generate paths for each tab
-  if (documentationTabs && documentationTabs.length > 0) {
-    for (const tab of documentationTabs) {
-      // Filter docs by tab
-      const tabDocs = filteredDocs.filter((doc) => doc.data.tab === tab.id);
-
-      // Generate paths for this tab
-      const tabPaths = tabDocs.map((doc) => {
-        return {
-          params: { docsRoute: localizedDocsRoute, slug: doc.id as string },
-          props: { doc, tabId: tab.id },
-        };
-      });
-
-      paths.push(...tabPaths);
-    }
-  } else {
-    // Fallback to original behavior if no tabs are configured
-    const defaultPaths = filteredDocs.map((doc) => {
-      return {
-        params: { docsRoute: localizedDocsRoute, slug: doc.id as string },
-        props: { doc, tabId: "main" },
-      };
-    });
-
-    paths.push(...defaultPaths);
-  }
-
-  return paths;
+  return (await getCollection("docs")).map((doc) => ({
+    params: { docsRoute: "docs", slug: doc.id }, props: { doc },
+  }));
 }
-
-const { doc, tabId = "main" } = Astro.props;
+const { doc } = Astro.props;
 const { Content, headings } = await render(doc);
 ---
-
-<DocsLayout doc={doc} headings={headings} tabId={tabId}>
+<DocsLayout doc={doc} headings={headings}>
   {
     siteSettings.copyLinkButtons === false ? (
       <Content

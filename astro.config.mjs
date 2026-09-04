@@ -4,7 +4,6 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import compress from "@playform/compress";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-import AutoImport from "astro-auto-import";
 import cloudflare from "@astrojs/cloudflare";
 
 const isProduction = process.env.CF_PAGES === "1";
@@ -23,29 +22,8 @@ export default defineConfig({
     imageService: "compile",
   }),
   site: "https://mootmoat.com",
-  // i18n configuration must match src/docs/config/translationData.json.ts
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "fr"],
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
+  trailingSlash: "always",
   integrations: [
-    // auto-imported component into all mdx files
-    AutoImport({
-      imports: [
-        // https://github.com/delucis/astro-auto-import
-        "@/docs/components/mdx-components/Aside.astro",
-        "@/docs/components/mdx-components/Badge.astro",
-        "@/docs/components/mdx-components/Button.astro",
-        "@/docs/components/mdx-components/Steps.astro",
-        "@/docs/components/mdx-components/Tabs.astro",
-        "@/docs/components/mdx-components/TabsContent.astro",
-        "@/docs/components/mdx-components/TabsList.astro",
-        "@/docs/components/mdx-components/TabsTrigger.astro",
-      ],
-    }),
     expressiveCode({
       plugins: [pluginLineNumbers()],
       themes: ["dracula"],

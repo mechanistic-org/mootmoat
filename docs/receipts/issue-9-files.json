@@ -1,0 +1,991 @@
+{
+  "ticket": "mootmoat#9",
+  "source_revision": "5ddbbcc99a605ce2b3eeb13e25f414fe11573f70",
+  "ruling": "https://github.com/mechanistic-org/mootmoat/issues/8#issuecomment-5546452747",
+  "doctrine_sources": [
+    {
+      "source": "src/docs/data/docs/Executive Briefing_ The Sovereign Engineering Entity.md",
+      "disposition": "remove",
+      "results": []
+    },
+    {
+      "source": "src/docs/data/docs/MootMoat v17 Implementation Study Guide.md",
+      "disposition": "rewrite",
+      "results": [
+        "src/docs/data/docs/doctrine.mdx",
+        "src/docs/data/docs/workbook.mdx"
+      ]
+    },
+    {
+      "source": "src/docs/data/docs/MootMoat v17 Implementation Study Guide_ The Senior Hardware Engineer’s FAQ.md",
+      "disposition": "rewrite",
+      "results": [
+        "src/docs/data/docs/faq.mdx"
+      ]
+    },
+    {
+      "source": "src/docs/data/docs/MootMoat_v17_Explanation.md",
+      "disposition": "rewrite",
+      "results": [
+        "src/docs/data/docs/what-is-mootmoat.mdx"
+      ]
+    },
+    {
+      "source": "src/docs/data/docs/MootMoat_v17_Spec.md",
+      "disposition": "rewrite",
+      "results": [
+        "src/docs/data/docs/doctrine.mdx"
+      ]
+    },
+    {
+      "source": "src/docs/data/docs/MootMoat_v17_StrategicCase.md",
+      "disposition": "remove",
+      "results": []
+    },
+    {
+      "source": "src/docs/data/docs/MootMoat_v17_Workbook.md",
+      "disposition": "rewrite",
+      "results": [
+        "src/docs/data/docs/workbook.mdx"
+      ]
+    },
+    {
+      "source": "src/docs/data/docs/NLM_promp-stack_v17.md",
+      "disposition": "remove",
+      "results": []
+    },
+    {
+      "source": "src/docs/data/docs/Strategic Implementation Roadmap_ Achieving Level 3 Sovereign Identity Conformance (MootMoat v17).md",
+      "disposition": "remove",
+      "results": []
+    },
+    {
+      "source": "src/docs/data/docs/The Ontology Gap_ Why Experienced Hardware Engineers Are Invisible to AI Hiring Agents — and What to Do About It.md",
+      "disposition": "rewrite",
+      "results": [
+        "src/docs/data/docs/ontology-gap.mdx"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "source": "src/docs/components/announcement-banner/AnnouncementBanner.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/button/Button.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/button/Button.astro"
+    },
+    {
+      "source": "src/docs/components/cookie-consent/CookieConsent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/docs-logo/DocsLogo.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/docs-logo/DocsLogo.astro"
+    },
+    {
+      "source": "src/docs/components/footer/Footer.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/footer/Footer.astro"
+    },
+    {
+      "source": "src/docs/components/footer/FooterLink.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/footer/FooterLink.astro"
+    },
+    {
+      "source": "src/docs/components/language-select/LanguageSelect.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/language-select/MobileLanguageSelect.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH1.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH1.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH1Copy.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH1Copy.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH2.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH2.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH2Copy.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH2Copy.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH3.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH3.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH3Copy.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH3Copy.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH4.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH4.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH4Copy.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH4Copy.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH5.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH5.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH5Copy.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH5Copy.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH6.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH6.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/CustomH6Copy.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/CustomH6Copy.astro"
+    },
+    {
+      "source": "src/docs/components/markdown-overrides/ExternalLink.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/markdown-overrides/ExternalLink.astro"
+    },
+    {
+      "source": "src/docs/components/mdx-components/Aside.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/Badge.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/Button.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/Steps.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/Tabs.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/TabsContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/TabsList.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/TabsTrigger.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/mdx-components/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/nav/DocsPagination.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/DocsPagination.astro"
+    },
+    {
+      "source": "src/docs/components/nav/Nav.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/Nav.astro"
+    },
+    {
+      "source": "src/docs/components/nav/NavLink.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/NavLink.astro"
+    },
+    {
+      "source": "src/docs/components/nav/SidebarLink.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/SidebarLink.astro"
+    },
+    {
+      "source": "src/docs/components/nav/SidebarNav.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/SidebarNav.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/Dialog.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/nav-dialog/Dialog.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/DialogClose.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/nav-dialog/DialogClose.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/DialogContent.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/nav-dialog/DialogContent.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/DialogDescription.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/nav/nav-dialog/DialogDescription.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/DialogFooter.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/nav/nav-dialog/DialogFooter.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/DialogHeader.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/nav/nav-dialog/DialogHeader.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/DialogTitle.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/nav/nav-dialog/DialogTitle.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/DialogTrigger.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/nav/nav-dialog/DialogTrigger.astro"
+    },
+    {
+      "source": "src/docs/components/nav/nav-dialog/index.ts",
+      "disposition": "retain",
+      "result": "src/docs/components/nav/nav-dialog/index.ts"
+    },
+    {
+      "source": "src/docs/components/nav/sidebar-nav-tabs/Tabs.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/nav/sidebar-nav-tabs/TabsContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/nav/sidebar-nav-tabs/TabsList.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/nav/sidebar-nav-tabs/TabsTrigger.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/nav/sidebar-nav-tabs/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/search/Search.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/search/Search.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/Dialog.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/search/search-dialog/Dialog.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/DialogClose.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/search/search-dialog/DialogClose.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/DialogContent.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/search/search-dialog/DialogContent.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/DialogDescription.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/search/search-dialog/DialogDescription.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/DialogFooter.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/search/search-dialog/DialogFooter.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/DialogHeader.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/search/search-dialog/DialogHeader.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/DialogTitle.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/search/search-dialog/DialogTitle.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/DialogTrigger.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/search/search-dialog/DialogTrigger.astro"
+    },
+    {
+      "source": "src/docs/components/search/search-dialog/index.ts",
+      "disposition": "retain",
+      "result": "src/docs/components/search/search-dialog/index.ts"
+    },
+    {
+      "source": "src/docs/components/seo/HrefLang.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/seo/Seo.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/seo/Seo.astro"
+    },
+    {
+      "source": "src/docs/components/skip-link/SkipLink.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/skip-link/SkipLink.astro"
+    },
+    {
+      "source": "src/docs/components/social/SocialIconNav.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/social/SocialIconNav.astro"
+    },
+    {
+      "source": "src/docs/components/social/SocialIconSimple.astro",
+      "disposition": "rewrite",
+      "result": "src/docs/components/social/SocialIconSimple.astro"
+    },
+    {
+      "source": "src/docs/components/starwind/accordion/Accordion.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/accordion/AccordionContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/accordion/AccordionItem.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/accordion/AccordionTrigger.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/accordion/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/alert/Alert.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/alert/AlertDescription.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/alert/AlertTitle.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/alert/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/badge/Badge.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/badge/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/button/Button.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/button/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/card/Card.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/card/CardContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/card/CardDescription.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/card/CardFooter.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/card/CardHeader.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/card/CardTitle.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/card/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/checkbox/Checkbox.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/checkbox/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/Dialog.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/DialogClose.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/DialogContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/DialogDescription.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/DialogFooter.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/DialogHeader.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/DialogTitle.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/DialogTrigger.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/dialog/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/input/Input.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/input/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/label/Label.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/label/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/Select.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectGroup.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectItem.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectLabel.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectSeparator.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectTrigger.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectTypes.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/SelectValue.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/select/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/switch/Switch.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/switch/SwitchTypes.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/switch/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tabs/Tabs.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tabs/TabsContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tabs/TabsList.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tabs/TabsTrigger.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tabs/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/textarea/Textarea.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/textarea/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tooltip/Tooltip.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tooltip/TooltipContent.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tooltip/TooltipTrigger.astro",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/starwind/tooltip/index.ts",
+      "disposition": "remove",
+      "result": null
+    },
+    {
+      "source": "src/docs/components/table-of-contents/TableOfContents.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/table-of-contents/TableOfContents.astro"
+    },
+    {
+      "source": "src/docs/components/table-of-contents/TocLink.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/table-of-contents/TocLink.astro"
+    },
+    {
+      "source": "src/docs/components/theme-toggle/ThemeToggle.astro",
+      "disposition": "retain",
+      "result": "src/docs/components/theme-toggle/ThemeToggle.astro"
+    }
+  ],
+  "preserved_surfaces": [
+    "src/pages/assets/[...path].ts",
+    "scripts/build-cloudflare-worker.mjs",
+    "wrangler.jsonc",
+    "wrangler.production.jsonc",
+    "src/assets/images/logo.svg",
+    "src/docs/layouts/BaseHead.astro",
+    "public/favicons/apple-touch-icon.png",
+    "public/favicons/favicon-96x96.png",
+    "public/favicons/favicon.ico",
+    "public/favicons/favicon.svg",
+    "public/favicons/site.webmanifest",
+    "public/favicons/web-app-manifest-192x192.png",
+    "public/favicons/web-app-manifest-512x512.png"
+  ],
+  "owned_paths": [
+    ".npmrc",
+    ".tours/docs-code-intro.tour",
+    "README.md",
+    "ascii_out.txt",
+    "astro.config.mjs",
+    "build_err.log",
+    "build_err.utf8.log",
+    "build_error.log",
+    "catch_err.js",
+    "docs/receipts/issue-9-files.json",
+    "docs/receipts/issue-9.md",
+    "error_log.txt",
+    "fix_frontmatter.js",
+    "functions/[[path]].js",
+    "netlify.toml",
+    "out.txt",
+    "package-lock.json",
+    "package.json",
+    "pnpm-lock.yaml",
+    "public/_headers",
+    "public/robots.txt",
+    "scripts/check-content.mjs",
+    "scripts/copy-search.mjs",
+    "src/assets/images/404/astronaut-nobg.png",
+    "src/assets/images/cosmic-themes-logo.png",
+    "src/assets/images/feature/custom-components.jpg",
+    "src/assets/images/feature/frontmatter.jpg",
+    "src/assets/images/feature/sidebar.jpg",
+    "src/assets/images/testimonials/BowTiedFocus.jpg",
+    "src/assets/images/testimonials/aniket_p.jpg",
+    "src/assets/images/testimonials/connor.webp",
+    "src/assets/images/testimonials/damiano.jpg",
+    "src/assets/images/testimonials/david-g-davedev.png",
+    "src/assets/images/testimonials/geoffrey.webp",
+    "src/content.config.ts",
+    "src/docs/components/announcement-banner/AnnouncementBanner.astro",
+    "src/docs/components/cookie-consent/CookieConsent.astro",
+    "src/docs/components/docs-logo/DocsLogo.astro",
+    "src/docs/components/footer/Footer.astro",
+    "src/docs/components/language-select/LanguageSelect.astro",
+    "src/docs/components/language-select/MobileLanguageSelect.astro",
+    "src/docs/components/markdown-overrides/CustomH1.astro",
+    "src/docs/components/markdown-overrides/CustomH1Copy.astro",
+    "src/docs/components/markdown-overrides/CustomH2.astro",
+    "src/docs/components/markdown-overrides/CustomH2Copy.astro",
+    "src/docs/components/markdown-overrides/CustomH3.astro",
+    "src/docs/components/markdown-overrides/CustomH3Copy.astro",
+    "src/docs/components/markdown-overrides/CustomH4.astro",
+    "src/docs/components/markdown-overrides/CustomH4Copy.astro",
+    "src/docs/components/markdown-overrides/CustomH5.astro",
+    "src/docs/components/markdown-overrides/CustomH5Copy.astro",
+    "src/docs/components/markdown-overrides/CustomH6.astro",
+    "src/docs/components/markdown-overrides/CustomH6Copy.astro",
+    "src/docs/components/markdown-overrides/ExternalLink.astro",
+    "src/docs/components/mdx-components/Aside.astro",
+    "src/docs/components/mdx-components/Badge.astro",
+    "src/docs/components/mdx-components/Button.astro",
+    "src/docs/components/mdx-components/Steps.astro",
+    "src/docs/components/mdx-components/Tabs.astro",
+    "src/docs/components/mdx-components/TabsContent.astro",
+    "src/docs/components/mdx-components/TabsList.astro",
+    "src/docs/components/mdx-components/TabsTrigger.astro",
+    "src/docs/components/mdx-components/index.ts",
+    "src/docs/components/nav/DocsPagination.astro",
+    "src/docs/components/nav/Nav.astro",
+    "src/docs/components/nav/NavLink.astro",
+    "src/docs/components/nav/SidebarLink.astro",
+    "src/docs/components/nav/SidebarNav.astro",
+    "src/docs/components/nav/nav-dialog/Dialog.astro",
+    "src/docs/components/nav/nav-dialog/DialogClose.astro",
+    "src/docs/components/nav/nav-dialog/DialogContent.astro",
+    "src/docs/components/nav/nav-dialog/DialogTrigger.astro",
+    "src/docs/components/nav/sidebar-nav-tabs/Tabs.astro",
+    "src/docs/components/nav/sidebar-nav-tabs/TabsContent.astro",
+    "src/docs/components/nav/sidebar-nav-tabs/TabsList.astro",
+    "src/docs/components/nav/sidebar-nav-tabs/TabsTrigger.astro",
+    "src/docs/components/nav/sidebar-nav-tabs/index.ts",
+    "src/docs/components/search/search-dialog/Dialog.astro",
+    "src/docs/components/search/search-dialog/DialogClose.astro",
+    "src/docs/components/search/search-dialog/DialogContent.astro",
+    "src/docs/components/search/search-dialog/DialogTrigger.astro",
+    "src/docs/components/seo/HrefLang.astro",
+    "src/docs/components/seo/Seo.astro",
+    "src/docs/components/social/SocialIconNav.astro",
+    "src/docs/components/social/SocialIconSimple.astro",
+    "src/docs/components/starwind/accordion/Accordion.astro",
+    "src/docs/components/starwind/accordion/AccordionContent.astro",
+    "src/docs/components/starwind/accordion/AccordionItem.astro",
+    "src/docs/components/starwind/accordion/AccordionTrigger.astro",
+    "src/docs/components/starwind/accordion/index.ts",
+    "src/docs/components/starwind/alert/Alert.astro",
+    "src/docs/components/starwind/alert/AlertDescription.astro",
+    "src/docs/components/starwind/alert/AlertTitle.astro",
+    "src/docs/components/starwind/alert/index.ts",
+    "src/docs/components/starwind/badge/Badge.astro",
+    "src/docs/components/starwind/badge/index.ts",
+    "src/docs/components/starwind/button/Button.astro",
+    "src/docs/components/starwind/button/index.ts",
+    "src/docs/components/starwind/card/Card.astro",
+    "src/docs/components/starwind/card/CardContent.astro",
+    "src/docs/components/starwind/card/CardDescription.astro",
+    "src/docs/components/starwind/card/CardFooter.astro",
+    "src/docs/components/starwind/card/CardHeader.astro",
+    "src/docs/components/starwind/card/CardTitle.astro",
+    "src/docs/components/starwind/card/index.ts",
+    "src/docs/components/starwind/checkbox/Checkbox.astro",
+    "src/docs/components/starwind/checkbox/index.ts",
+    "src/docs/components/starwind/dialog/Dialog.astro",
+    "src/docs/components/starwind/dialog/DialogClose.astro",
+    "src/docs/components/starwind/dialog/DialogContent.astro",
+    "src/docs/components/starwind/dialog/DialogDescription.astro",
+    "src/docs/components/starwind/dialog/DialogFooter.astro",
+    "src/docs/components/starwind/dialog/DialogHeader.astro",
+    "src/docs/components/starwind/dialog/DialogTitle.astro",
+    "src/docs/components/starwind/dialog/DialogTrigger.astro",
+    "src/docs/components/starwind/dialog/index.ts",
+    "src/docs/components/starwind/input/Input.astro",
+    "src/docs/components/starwind/input/index.ts",
+    "src/docs/components/starwind/label/Label.astro",
+    "src/docs/components/starwind/label/index.ts",
+    "src/docs/components/starwind/select/Select.astro",
+    "src/docs/components/starwind/select/SelectContent.astro",
+    "src/docs/components/starwind/select/SelectGroup.astro",
+    "src/docs/components/starwind/select/SelectItem.astro",
+    "src/docs/components/starwind/select/SelectLabel.astro",
+    "src/docs/components/starwind/select/SelectSeparator.astro",
+    "src/docs/components/starwind/select/SelectTrigger.astro",
+    "src/docs/components/starwind/select/SelectTypes.ts",
+    "src/docs/components/starwind/select/SelectValue.astro",
+    "src/docs/components/starwind/select/index.ts",
+    "src/docs/components/starwind/switch/Switch.astro",
+    "src/docs/components/starwind/switch/SwitchTypes.ts",
+    "src/docs/components/starwind/switch/index.ts",
+    "src/docs/components/starwind/tabs/Tabs.astro",
+    "src/docs/components/starwind/tabs/TabsContent.astro",
+    "src/docs/components/starwind/tabs/TabsList.astro",
+    "src/docs/components/starwind/tabs/TabsTrigger.astro",
+    "src/docs/components/starwind/tabs/index.ts",
+    "src/docs/components/starwind/textarea/Textarea.astro",
+    "src/docs/components/starwind/textarea/index.ts",
+    "src/docs/components/starwind/tooltip/Tooltip.astro",
+    "src/docs/components/starwind/tooltip/TooltipContent.astro",
+    "src/docs/components/starwind/tooltip/TooltipTrigger.astro",
+    "src/docs/components/starwind/tooltip/index.ts",
+    "src/docs/config/en/navData.json.ts",
+    "src/docs/config/en/sidebarNavData.json.ts",
+    "src/docs/config/en/siteData.json.ts",
+    "src/docs/config/en/testimonialData.json.ts",
+    "src/docs/config/fr/navData.json.ts",
+    "src/docs/config/fr/sidebarNavData.json.ts",
+    "src/docs/config/fr/siteData.json.ts",
+    "src/docs/config/fr/testimonialData.json.ts",
+    "src/docs/config/navData.json.ts",
+    "src/docs/config/siteData.json.ts",
+    "src/docs/config/siteSettings.json.ts",
+    "src/docs/config/translationData.json.ts",
+    "src/docs/config/types/configDataTypes.ts",
+    "src/docs/data/docs/Executive Briefing_ The Sovereign Engineering Entity.md",
+    "src/docs/data/docs/MootMoat v17 Implementation Study Guide.md",
+    "src/docs/data/docs/MootMoat v17 Implementation Study Guide_ The Senior Hardware Engineer’s FAQ.md",
+    "src/docs/data/docs/MootMoat_v17_Explanation.md",
+    "src/docs/data/docs/MootMoat_v17_Spec.md",
+    "src/docs/data/docs/MootMoat_v17_StrategicCase.md",
+    "src/docs/data/docs/MootMoat_v17_Workbook.md",
+    "src/docs/data/docs/NLM_promp-stack_v17.md",
+    "src/docs/data/docs/Strategic Implementation Roadmap_ Achieving Level 3 Sovereign Identity Conformance (MootMoat v17).md",
+    "src/docs/data/docs/The Ontology Gap_ Why Experienced Hardware Engineers Are Invisible to AI Hiring Agents — and What to Do About It.md",
+    "src/docs/data/docs/doctrine.mdx",
+    "src/docs/data/docs/en/authentication/overview.mdx",
+    "src/docs/data/docs/en/components/aside.mdx",
+    "src/docs/data/docs/en/components/badge.mdx",
+    "src/docs/data/docs/en/components/button.mdx",
+    "src/docs/data/docs/en/components/index.mdx",
+    "src/docs/data/docs/en/components/steps.mdx",
+    "src/docs/data/docs/en/components/tabs.mdx",
+    "src/docs/data/docs/en/endpoints/rest-api.mdx",
+    "src/docs/data/docs/en/getting-started/configuration.mdx",
+    "src/docs/data/docs/en/getting-started/index.mdx",
+    "src/docs/data/docs/en/getting-started/integrating.mdx",
+    "src/docs/data/docs/en/reference/elements.mdx",
+    "src/docs/data/docs/en/reference/frontmatter-reference.mdx",
+    "src/docs/data/docs/en/reference/nav-config.mdx",
+    "src/docs/data/docs/en/reference/sidebar-navigation.mdx",
+    "src/docs/data/docs/en/reference/site-settings.mdx",
+    "src/docs/data/docs/en/tips-and-tricks/advanced-techniques.mdx",
+    "src/docs/data/docs/faq.mdx",
+    "src/docs/data/docs/fr/authentication/overview.mdx",
+    "src/docs/data/docs/fr/components/aside.mdx",
+    "src/docs/data/docs/fr/components/badge.mdx",
+    "src/docs/data/docs/fr/components/button.mdx",
+    "src/docs/data/docs/fr/components/index.mdx",
+    "src/docs/data/docs/fr/components/steps.mdx",
+    "src/docs/data/docs/fr/components/tabs.mdx",
+    "src/docs/data/docs/fr/endpoints/rest-api.mdx",
+    "src/docs/data/docs/fr/getting-started/configuration.mdx",
+    "src/docs/data/docs/fr/getting-started/index.mdx",
+    "src/docs/data/docs/fr/getting-started/integrating.mdx",
+    "src/docs/data/docs/fr/reference/elements.mdx",
+    "src/docs/data/docs/fr/reference/frontmatter-reference.mdx",
+    "src/docs/data/docs/fr/reference/nav-config.mdx",
+    "src/docs/data/docs/fr/reference/sidebar-navigation.mdx",
+    "src/docs/data/docs/fr/reference/site-settings.mdx",
+    "src/docs/data/docs/fr/tips-and-tricks/advanced-techniques.mdx",
+    "src/docs/data/docs/ontology-gap.mdx",
+    "src/docs/data/docs/what-is-mootmoat.mdx",
+    "src/docs/data/docs/workbook.mdx",
+    "src/docs/js/docsUtils.ts",
+    "src/docs/js/localeUtils.ts",
+    "src/docs/js/particle-effect.js",
+    "src/docs/js/textUtils.ts",
+    "src/docs/js/translationUtils.ts",
+    "src/docs/layouts/BaseLayoutDocs.astro",
+    "src/docs/layouts/Docs404Layout.astro",
+    "src/docs/layouts/DocsLandingLayout.astro",
+    "src/docs/layouts/DocsLayout.astro",
+    "src/docs/scripts/docs-config-i18n.js",
+    "src/docs/scripts/i18n/config-updaters/astro-config.js",
+    "src/docs/scripts/i18n/config-updaters/keystatic-config.js",
+    "src/docs/scripts/i18n/config-updaters/site-settings.js",
+    "src/docs/scripts/i18n/config-updaters/translation-data.js",
+    "src/docs/scripts/i18n/folder-operations.js",
+    "src/docs/scripts/i18n/index.js",
+    "src/docs/scripts/i18n/prompts.js",
+    "src/docs/scripts/i18n/types.js",
+    "src/docs/scripts/i18n/utils/collect-files.js",
+    "src/docs/scripts/i18n/utils/copy-folder.js",
+    "src/docs/scripts/i18n/utils/file-utils.js",
+    "src/docs/scripts/i18n/utils/logging.js",
+    "src/docs/scripts/i18n/utils/remove-href-translations.js",
+    "src/docs/scripts/i18n/utils/remove-text-translations.js",
+    "src/docs/scripts/i18n/utils/replace-in-files.js",
+    "src/docs/scripts/utils/detect-package-manager.js",
+    "src/docs/styles/docs-global.css",
+    "src/icons/mdi/github.svg",
+    "src/icons/tabler/accessible.svg",
+    "src/icons/tabler/alert-triangle.svg",
+    "src/icons/tabler/api-app.svg",
+    "src/icons/tabler/arrow-up-right.svg",
+    "src/icons/tabler/brand-bluesky.svg",
+    "src/icons/tabler/brand-facebook.svg",
+    "src/icons/tabler/brand-google-filled.svg",
+    "src/icons/tabler/brand-threads.svg",
+    "src/icons/tabler/brand-twitter.svg",
+    "src/icons/tabler/brand-x.svg",
+    "src/icons/tabler/bulb.svg",
+    "src/icons/tabler/chevron-down.svg",
+    "src/icons/tabler/command.svg",
+    "src/icons/tabler/edit-circle.svg",
+    "src/icons/tabler/file-text.svg",
+    "src/icons/tabler/flame.svg",
+    "src/icons/tabler/info-circle.svg",
+    "src/icons/tabler/language.svg",
+    "src/icons/tabler/link.svg",
+    "src/icons/tabler/mail.svg",
+    "src/icons/tabler/moon-stars.svg",
+    "src/icons/tabler/school.svg",
+    "src/icons/tabler/search.svg",
+    "src/icons/tabler/sparkles.svg",
+    "src/icons/tabler/stack-2.svg",
+    "src/icons/tabler/sun.svg",
+    "src/icons/tabler/x.svg",
+    "src/pages/404.astro",
+    "src/pages/[docsRoute]/[...slug].astro",
+    "src/pages/[docsRoute]/index.astro",
+    "src/pages/fr/[docsRoute]/[...slug].astro",
+    "src/pages/fr/[docsRoute]/index.astro",
+    "src/pages/fr/index.astro",
+    "src/pages/index.astro",
+    "src/styles/global.css",
+    "src/styles/mos.css",
+    "src/styles/tailwind-theme.css",
+    "starwind.config.json"
+  ]
+}
