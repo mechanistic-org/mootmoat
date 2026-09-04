@@ -56,7 +56,7 @@ const { prev, next } = await getAdjacentPages(doc.id);
         <main class="-mt-px w-full max-w-2xl min-w-0">
           {/* Mobile Table of Contents Dropdown */}
           <div class="sticky top-[calc(var(--nav-height)-1px)] z-40 -mx-4 mb-4 lg:hidden">
-            <details class="mobile-toc bg-background/90 relative px-4 py-2 backdrop-blur">
+            <details class="mobile-toc bg-background relative px-4 py-2">
               <summary class="font-heading cursor-pointer list-none font-medium tracking-wide"
                 >On this page</summary
               >
@@ -105,14 +105,6 @@ const { prev, next } = await getAdjacentPages(doc.id);
     </div>
   </div>
 
-  <div class="pointer-events-none fixed inset-0 z-10 hidden dark:block">
-    <div class="relative hidden h-14 opacity-50 md:flex">
-      <div
-        class="to-primary/20 pointer-events-none absolute top-[300px] -right-[350px] z-10 h-[400px] w-[1000px] origin-top-right rotate-60 rounded-2xl bg-gradient-to-bl from-blue-500/20 blur-3xl xl:top-[600px] 2xl:top-[700px]"
-      >
-      </div>
-    </div>
-  </div>
 </BaseLayoutDocs>
 
 <style>

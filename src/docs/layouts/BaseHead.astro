@@ -15,22 +15,23 @@ export interface Props {
 const { title, description, image, noindex = false } = Astro.props as Props;
 
 import GeistVariable from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2";
-import GeistMonoVariable from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2";
+import JetBrainsMonoVariable from "@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2";
 ---
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" initial-scale="1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
 
 <!-- local font preload for better performance -->
 <link rel="preload" href={GeistVariable} as="font" type="font/woff2" crossorigin="anonymous" />
-<link rel="preload" href={GeistMonoVariable} as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href={JetBrainsMonoVariable} as="font" type="font/woff2" crossorigin="anonymous" />
 
-<!-- Favicons. Generated from https://realfavicongenerator.net/ -->
+<!-- Favicons generated from docs/brand/mark.svg by build:brand. -->
 <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
 <link rel="shortcut icon" href="/favicons/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Solstice" />
+<meta name="apple-mobile-web-app-title" content="MootMoat" />
 <link rel="manifest" href="/favicons/site.webmanifest" />
 
 <!-- other -->

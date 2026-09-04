@@ -15,7 +15,9 @@
     "format": "eslint . --fix && prettier -w . --ignore-unknown --cache",
     "lint": "eslint .",
     "check:content": "node ./scripts/check-content.mjs",
-    "search:dev": "node ./scripts/copy-search.mjs"
+    "search:dev": "node ./scripts/copy-search.mjs",
+    "build:brand": "node ./scripts/build-brand.mjs",
+    "check:design": "node ./scripts/check-design.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
@@ -23,7 +25,6 @@
     "@astrojs/sitemap": "3.4.1",
     "@expressive-code/plugin-line-numbers": "^0.41.3",
     "@fontsource-variable/geist": "5.2.6",
-    "@fontsource-variable/geist-mono": "5.2.6",
     "@pagefind/default-ui": "1.3.0",
     "@tabler/icons": "3.34.1",
     "@tailwindcss/vite": "4.1.11",
@@ -34,7 +35,8 @@
     "mime-types": "^3.0.2",
     "tailwind-variants": "1.0.0",
     "tailwindcss": "4.1.11",
-    "tw-animate-css": "1.3.6"
+    "tw-animate-css": "1.3.6",
+    "@fontsource-variable/jetbrains-mono": "5.2.8"
   },
   "devDependencies": {
     "@eslint/js": "9.32.0",
@@ -48,7 +50,9 @@
     "pagefind": "1.3.0",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.14",
-    "typescript-eslint": "8.38.0"
+    "typescript-eslint": "8.38.0",
+    "sharp": "^0.33.0",
+    "puppeteer": "24.35.0"
   },
   "overrides": {
     "sharp": "^0.33.0"

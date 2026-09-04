@@ -1,0 +1,72 @@
+{
+  "sources": [
+    "https://github.com/mechanistic-org/mootmoat/issues/10",
+    "https://github.com/mechanistic-org/mootmoat/issues/8#issuecomment-5546452747",
+    "https://github.com/mechanistic-org/mootmoat/issues/9#issuecomment-5547218337"
+  ],
+  "baseline": {
+    "mootmoat": "d2705b5a29cf2c9c71badd6624df4bc8a3594689",
+    "portfolio": "1a0844bf58e5aa575b3747745f5bb2e8f43c991e"
+  },
+  "mootmoat_paths": [
+    "docs/brand/mark.svg",
+    "docs/brand/social.svg",
+    "docs/receipts/issue-10-files.json",
+    "docs/receipts/issue-10.md",
+    "docs/release-assets/mootmoat_v18.png",
+    "package-lock.json",
+    "package.json",
+    "public/favicon.zip",
+    "public/favicons/apple-touch-icon.png",
+    "public/favicons/favicon-96x96.png",
+    "public/favicons/favicon.ico",
+    "public/favicons/favicon.svg",
+    "public/favicons/site.webmanifest",
+    "public/favicons/web-app-manifest-192x192.png",
+    "public/favicons/web-app-manifest-512x512.png",
+    "public/images/cosmic-themes-logo.png",
+    "public/images/logo.svg",
+    "public/images/solstice.jpg",
+    "public/logo.svg",
+    "scripts/build-brand.mjs",
+    "scripts/check-content.mjs",
+    "scripts/check-design.mjs",
+    "src/assets/images/logo.svg",
+    "src/docs/components/docs-logo/DocsLogo.astro",
+    "src/docs/components/footer/Footer.astro",
+    "src/docs/components/search/Search.astro",
+    "src/docs/config/siteData.json.ts",
+    "src/docs/layouts/BaseHead.astro",
+    "src/docs/layouts/BaseLayoutDocs.astro",
+    "src/docs/layouts/Docs404Layout.astro",
+    "src/docs/layouts/DocsLandingLayout.astro",
+    "src/docs/layouts/DocsLayout.astro",
+    "src/docs/styles/docs-global.css",
+    "src/pages/[docsRoute]/index.astro",
+    "src/pages/index.astro",
+    "src/styles/coherence.css",
+    "src/styles/fonts.css",
+    "src/styles/global.css",
+    "src/styles/tailwind-theme.css"
+  ],
+  "portfolio_paths": [
+    "src/config/bio_nodes.ts"
+  ],
+  "unchanged_authority": [
+    "src/docs/data/docs/doctrine.mdx",
+    "src/docs/data/docs/faq.mdx",
+    "src/docs/data/docs/ontology-gap.mdx",
+    "src/docs/data/docs/what-is-mootmoat.mdx",
+    "src/docs/data/docs/workbook.mdx"
+  ],
+  "r2_release_asset": {
+    "file": "docs/release-assets/mootmoat_v18.png",
+    "key": "mootmoat_v18.png",
+    "bucket": "assets-mootmoat-com",
+    "sha256": "39b53aa046fdf390d45aa8d6b5f8ea5de62033f3b1a11a0d01ae79d6340b45f7",
+    "content_type": "image/png",
+    "width": 1200,
+    "height": 630,
+    "state": "prepared locally; not uploaded"
+  }
+}

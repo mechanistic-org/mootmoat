@@ -1,0 +1,73 @@
+/* V18 presentation contract. Content and canonical routes are owned by #9. */
+#documentation-layout *,
+#documentation-layout *::before,
+#documentation-layout *::after {
+  border-radius: 0 !important;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+
+.site-header > div { max-width: 96rem; margin-inline: auto; }
+.site-header nav { min-width: 0; }
+.site-header a, .site-header button { min-height: 44px; }
+.site-header button { min-width: 44px; }
+.site-header a, .sidebar-nav, footer nav, .doctrine-eyebrow {
+  font-family: var(--font-mono);
+}
+
+.doctrine-landing { max-width: 58rem; padding: 4rem 1.5rem; }
+.doctrine-landing { margin: 0 auto; min-height: 60vh; }
+.doctrine-landing p { margin: 1.5rem 0; line-height: 1.7; }
+.doctrine-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; }
+.doctrine-home { padding-block: clamp(3rem, 8vw, 7rem); }
+.doctrine-home .docs-h1 { max-width: 15ch; font-size: clamp(2.3rem, 5.5vw, 4.4rem); line-height: 1.12; letter-spacing: -0.045em; }
+.doctrine-home > p { max-width: 64ch; }
+.doctrine-home > h1 + p { font-size: 1.2rem; line-height: 1.6; }
+.doctrine-landing .doctrine-eyebrow { margin: 0 0 2rem; color: var(--accent); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+.doctrine-actions a { min-height: 44px; border: 1px solid var(--border); }
+.doctrine-actions a:first-child { border-color: var(--primary); }
+.doctrine-actions a:hover { border-color: var(--foreground); }
+.doctrine-home > p:last-child { border-top: 1px solid var(--border); padding-top: 1.5rem; color: var(--muted-foreground); font-size: .9rem; }
+.doctrine-index { padding-left: 0; list-style: none; counter-reset: contents; margin-block: 2rem; border-top: 1px solid var(--border); }
+.doctrine-index li { counter-increment: contents; position: relative; padding: 1.4rem 0 1.4rem 3rem; border-bottom: 1px solid var(--border); }
+.doctrine-index li::before { content: counter(contents, decimal-leading-zero); position: absolute; left: 0; top: 1.6rem; color: var(--accent); font: .8rem var(--font-mono); }
+.doctrine-index a { font: 500 1.05rem var(--font-mono); text-decoration: none; }
+.doctrine-index a:hover { text-decoration: underline; text-underline-offset: .25em; }
+.doctrine-index p { color: var(--muted-foreground); }
+.sidebar-nav a { min-height: 36px; display: flex; align-items: center; }
+.docs-nav__link--sidebar-current { color: var(--accent); background: var(--muted); }
+.docs-markdown-content { line-height: 1.75; }
+.docs-markdown-content h2 { padding-top: .5rem; }
+.docs-markdown-content :is(h1,h2,h3,h4,h5,h6) { line-height: 1.35; letter-spacing: -.025em; }
+.mobile-toc { border-bottom: 1px solid var(--border); }
+.mobile-toc summary { min-height: 36px; display: flex; align-items: center; }
+.mobile-toc ul { max-height: 65svh; overflow-y: auto; }
+dialog { box-shadow: none !important; }
+dialog a { min-height: 44px; }
+dialog, .dialog-frame { --pagefind-ui-border-radius: 0px; }
+footer { background: var(--card) !important; }
+footer p { color: var(--muted-foreground); }
+footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+footer nav a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--outline); outline-offset: 3px; }
+
+@media (max-width: 639px) {
+  .doctrine-landing { padding: 2.5rem 1.25rem; }
+  .doctrine-actions { flex-direction: column; align-items: stretch; }
+  .doctrine-actions a { justify-content: center; }
+  .site-header > div { padding-inline: .75rem; }
+  .site-header a { font-size: 1rem; }
+  .docs-h1 { overflow-wrap: anywhere; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: 0ms !important; }
+}

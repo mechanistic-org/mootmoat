@@ -20,8 +20,7 @@ for (const route of routes) {
   assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1, `${route}: one page heading`);
   assert.match(html, /id=(?:"main-content"|'main-content'|main-content[\s>])/, `${route}: skip-link target`);
   assert.match(html, /lang=(?:"en"|'en'|en[\s>])/, `${route}: English document`);
-  // The old apple-mobile-web-app-title, favicon/manifest and R2 image are #10 assets.
-  const current = html.replace(/<meta\b(?=[^>]*apple-mobile-web-app-title)[^>]*>/gi, "");
+  const current = html;
   assert.doesNotMatch(current, /Solstice|Cosmic Themes|cosmicthemes\.com|github\.com\/(?:Boston343|mootmoat)(?:["/\s<])|\/fr\/|hreflang=|OpenClaw|NanoClaw|unfakeable|isomorphicProof/i, `${route}: stale public claims or template routes`);
   assert.ok(attributes(html, "a", "href").includes("https://github.com/mechanistic-org/mootmoat"), `${route}: correct repository authority`);
   assert.ok(html.includes(`https://mootmoat.com${route}`), `${route}: canonical URL`);
