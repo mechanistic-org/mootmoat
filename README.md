@@ -42,7 +42,7 @@ npm run dev
 npx --yes wrangler@4.114.0 deploy --dry-run --config wrangler.production.jsonc
 ```
 
-The content check verifies the route inventory, internal links and fragments, source metadata, all twelve canvases, English-only Pagefind output, sitemap parity, and absence of obsolete public claims. `npm run lint` retains the repository ESLint check, but currently cannot start after a clean install because its TypeScript peer is undeclared. This inherited limitation is recorded in the receipt. The former Vitest and motion-coverage scripts had no installed Vitest runner or test target and were removed with the unused template machinery.
+The content check verifies the route inventory, internal links and fragments, source metadata, all twelve canvases, English-only Pagefind output, sitemap parity, and absence of obsolete public claims. `npm run lint` runs the repository ESLint check after a clean install. TypeScript 5.8.3 is pinned as a development dependency to satisfy the retained typescript-eslint 8.38.0 peer range. Lint currently passes with zero errors and ten existing import-order warnings; see [issue #15's tooling receipt](docs/receipts/issue-15.md). The former Vitest and motion-coverage scripts had no installed Vitest runner or test target and were removed with the unused template machinery.
 
 ## Runtime and release boundary
 
