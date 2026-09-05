@@ -8,7 +8,7 @@
     "build": "astro build && pagefind --site dist",
     "build:worker": "node ./scripts/build-cloudflare-worker.mjs",
     "deploy:worker": "npx --yes wrangler@4.114.0 deploy",
-    "check:worker": "npx --yes wrangler@4.114.0 deploy --dry-run",
+    "check:worker": "node ./scripts/check-worker-routing.mjs && npx --yes wrangler@4.114.0 deploy --dry-run",
     "deploy:production": "npx --yes wrangler@4.114.0 deploy --config wrangler.production.jsonc",
     "preview": "astro preview",
     "astro": "astro",
@@ -17,7 +17,9 @@
     "check:content": "node ./scripts/check-content.mjs",
     "search:dev": "node ./scripts/copy-search.mjs",
     "build:brand": "node ./scripts/build-brand.mjs",
-    "check:design": "node ./scripts/check-design.mjs"
+    "check:design": "node ./scripts/check-design.mjs",
+    "check:release-image": "node ./scripts/check-release-image.mjs",
+    "check:production": "node ./scripts/check-production.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",

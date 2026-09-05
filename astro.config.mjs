@@ -22,7 +22,8 @@ export default defineConfig({
     imageService: "compile",
   }),
   site: "https://mootmoat.com",
-  trailingSlash: "always",
+  // Dynamic R2 filename routes must also match without a final slash.
+  trailingSlash: "ignore",
   integrations: [
     expressiveCode({
       plugins: [pluginLineNumbers()],

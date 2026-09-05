@@ -36,7 +36,7 @@ npm run search:dev
 npm run dev
 ```
 
-`npm run build:worker` invokes the explicit Cloudflare build wrapper, which runs Astro and Pagefind with the required build environment. `npm run check:worker` packages the development Worker configuration in dry-run mode. To validate production packaging without deploying:
+`npm run build:worker` invokes the explicit Cloudflare build wrapper, which runs Astro and Pagefind with the required build environment. `npm run check:worker` verifies the generated R2 route accepts filename URLs and packages the development Worker configuration in dry-run mode. To validate production packaging without deploying:
 
 ```sh
 npx --yes wrangler@4.114.0 deploy --dry-run --config wrangler.production.jsonc
@@ -48,7 +48,9 @@ The content check verifies the route inventory, internal links and fragments, so
 
 The site uses Astro and the Cloudflare Worker adapter. `wrangler.production.jsonc` retains the production routes and the `MOOTMOAT_ASSETS` R2 binding. `src/pages/assets/[...path].ts` serves the retained `/assets/*` route. A local preview without an R2 binding does not prove production asset behavior.
 
-Building and dry-run packaging do not deploy. Production deployment is a separate release action. The current content cleanup leaves visual-brand coherence, the existing logo/favicon/manifest and R2 image replacement, and portfolio crosslinks to issue #10; final production acceptance and deployment belong to #11.
+Building and dry-run packaging do not deploy. Production deployment is a separate release action. The V18 brand and cross-links are recorded in [issue #10's receipt](docs/receipts/issue-10.md); production acceptance and release dispositions are recorded in [issue #11's receipt](docs/receipts/issue-11.md).
+
+After a production build, `npm run check:production` compares live HTML with the local build and verifies production search, sitemap, links/fragments, retired-route 404s, branding, responsive layouts, R2 bytes, and actual portfolio cross-link navigation. It makes read-only requests to both production sites and writes local reports/screenshots under `var/release-11/`. `npm run check:release-image` is the focused exact-URL image regression check; an optional base URL argument supports a local Worker fixture.
 
 The historical `session_mining_mootmoat_v1.md` is a session record, not a current product specification or publishing source.
 
