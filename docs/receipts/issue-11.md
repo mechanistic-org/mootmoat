@@ -86,6 +86,13 @@ All four tickets were already Closed / Done on the Main Board when cold-read. Th
 
 No original killed requirement is marked implemented. No separate ingestion, scraper, dashboard, client-template, swarm, or portfolio redesign work is started. Each issue receives its own evidence-backed comment linking this receipt and the approved ruling.
 
+### Published disposition records
+
+- [global_agent#89 observed-delivery disposition](https://github.com/mechanistic-org/global_agent/issues/89#issuecomment-5547988160)
+- [mootmoat#3 observed-delivery disposition](https://github.com/mechanistic-org/mootmoat/issues/3#issuecomment-5547988305)
+- [mootmoat#4 observed-delivery disposition](https://github.com/mechanistic-org/mootmoat/issues/4#issuecomment-5547988444)
+- [mootmoat#6 observed-delivery disposition](https://github.com/mechanistic-org/mootmoat/issues/6#issuecomment-5547988584)
+
 ## Binary controller acceptance
 
 | #7 criterion / original outcome | Evidence |
