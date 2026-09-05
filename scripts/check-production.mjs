@@ -17,7 +17,16 @@ const digest = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const report = { status: "running", startedAt: new Date().toISOString(), routes: [], missingRoutes: [], viewports: [], interactions: [], crossLinks: [] };
 const html = new Map();
 async function get(url, status = 200) {
-  const response = await fetch(url, { signal: AbortSignal.timeout(30000) });
+  let response;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      response = await fetch(url, { signal: AbortSignal.timeout(30000) });
+      break;
+    } catch (error) {
+      if (attempt === 3) throw error;
+      console.warn(`Transport retry ${attempt}: ${url} (${error.cause?.code || error.name})`);
+    }
+  }
   assert.equal(response.status, status, `${url}: HTTP status`);
   return response;
 }
@@ -143,12 +152,31 @@ try {
   await page.waitForFunction(() => location.pathname === "/docs/workbook/" && !document.querySelector("dialog[open]"));
   await page.waitForNetworkIdle();
   report.interactions.push({search:"provenance",results,activation:"workbook navigation closes search dialog"});
-  const stale = await page.evaluate(async () => { const p = await import("/pagefind/pagefind.js"); const r = await p.search("Solstice"); return r.results.length; });
-  assert.equal(stale,0); report.interactions.push("Pagefind API has zero Solstice results");
+  // Pagefind can return partial-word matches (for example "so" for "Solstice").
+  // Inspect actual indexed content instead of assuming every query is exact.
+  const legacyQuery = await page.evaluate(async () => {
+    const p = await import("/pagefind/pagefind.js");
+    const r = await p.search("Solstice");
+    return Promise.all(r.results.map(async (result) => {
+      const data = await result.data();
+      return {url:data.url, title:data.meta.title, stale:/Solstice|Cosmic Themes|NanoClaw|OpenClaw/i.test(data.content)};
+    }));
+  });
+  for (const result of legacyQuery) {
+    assert.equal(result.stale,false,"Returned search content has no retired template or execution-model text");
+    assert.ok(routes.includes(new URL(result.url,base).pathname));
+  }
+  report.interactions.push({legacyQuery:"Solstice",results:legacyQuery,check:"Partial matches resolve only to current, residue-free content"});
   await page.goto(base + "/docs/workbook/#01-provenance-chain", {waitUntil:"networkidle0"});
-  const anchor = await page.$eval("#01-provenance-chain", (e) => ({top:e.getBoundingClientRect().top, bottom:e.getBoundingClientRect().bottom}));
+  await page.waitForFunction(() => {
+    const target = document.getElementById("01-provenance-chain");
+    const bounds = target?.getBoundingClientRect();
+    return bounds && bounds.bottom > 0 && bounds.top < innerHeight;
+  }, {timeout:10000});
+  const anchor = await page.$eval('[id="01-provenance-chain"]', (e) => ({top:e.getBoundingClientRect().top, bottom:e.getBoundingClientRect().bottom}));
   assert.ok(anchor.bottom > 0 && anchor.top < 844, "Deep fragment reaches visible heading");
   report.interactions.push({fragment:"#01-provenance-chain",...anchor});
+  await page.setViewport({width:1440,height:1000});
   await page.goto(base + "/",{waitUntil:"networkidle0"});
   await page.keyboard.press("Tab");
   assert.equal(await page.evaluate(() => document.activeElement?.getAttribute("href")),"#main-content");
@@ -163,19 +191,24 @@ try {
   for (const width of [1440,390]) {
     await page.setViewport({width,height:900});
     await page.goto("https://eriknorris.com/about/",{waitUntil:"networkidle0"});
+    await page.waitForFunction(() => { const island = document.querySelector('astro-island[component-url*="ConstraintField"]'); return island && !island.hasAttribute("ssr"); });
     if (width === 1440) {
       const selector = '.cf-node[aria-label^="MootMoat"]';
       await page.waitForSelector(selector);
-      await page.focus(selector);
-      await Promise.all([page.waitForNavigation({waitUntil:"networkidle0"}), page.keyboard.press("Enter")]);
+      await page.$eval(selector, (node) => node.focus());
+      await page.keyboard.press("Enter");
     } else {
       const selector = '.cf-list a[href="https://mootmoat.com/"]';
       await page.waitForSelector(selector);
-      await Promise.all([page.waitForNavigation({waitUntil:"networkidle0"}),page.click(selector)]);
+      await page.click(selector);
     }
+    await page.waitForFunction(() => location.href === "https://mootmoat.com/");
+    await page.waitForSelector("h1");
     assert.equal(page.url(),base + "/");
     const outbound = page.url();
-    await Promise.all([page.waitForNavigation({waitUntil:"networkidle0"}),page.click('footer a[href="https://eriknorris.com/"]')]);
+    await page.click('footer a[href="https://eriknorris.com/"]');
+    await page.waitForFunction(() => location.href === "https://eriknorris.com/");
+    await page.waitForSelector("h1");
     assert.equal(page.url(),"https://eriknorris.com/");
     report.crossLinks.push({width,from:"https://eriknorris.com/about/",outbound,returned:page.url()});
   }
